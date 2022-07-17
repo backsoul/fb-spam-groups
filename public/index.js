@@ -25,7 +25,7 @@ const Login = () => {
 }
 
 const statusChangeCallback = (token) => {
-    FB.api(`/me&access_token=${token}`, function(response) {
+    FB.api(`/me?fields=id,name,first_name&access_token=${token}`, function(response) {
         console.log(response)
     })
 }
