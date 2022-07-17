@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  spam:
+    container_name: spam
+    build: 
+      context: .
+      target: 'spam'
+    volumes:
+      - .:/app
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    
+    ports:
+      - 3000
+    environment:
+      TZ: America/Bogota
+      VIRTUAL_HOST: spam.backsoul.xyz
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: spam.backsoul.xyz
+      LETSENCRYPT_EMAIL: danielsarmientoenterprise@gmail.com
