@@ -18,3 +18,8 @@ services:
       VIRTUAL_PORT: 3000
       LETSENCRYPT_HOST: spam.backsoul.xyz
       LETSENCRYPT_EMAIL: danielsarmientoenterprise@gmail.com
+    networks:
+      - web
+networks:
+  web:
+    external: true
